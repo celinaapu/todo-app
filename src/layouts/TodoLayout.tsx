@@ -32,24 +32,24 @@ export const TodoLayout: FC<TodoLayoutProps> = ({ component }) => {
         <div className=" flex-row border-shodow flex justify-center items-center w-4/6 rounded-md-transparent">
           <div className="w-10/12">
             <input
-              className=" bg-slate-100 w-full h-8 rounded-md"
+              className=" bg-slate-100 w-full focus:outline-none h-8 rounded-md"
               type="type"
               placeholder="search your task here..."
             />
           </div>
-          <div className="bg-red-500 h-8 flex justify-center items-center  rounded-md w-[36px] text-white text-md">
+          <div className="bg-red-500 h-8 flex justify-center items-center  rounded-md w-[36px] text-white-100 text-md">
             <IoSearchOutline />
           </div>
         </div>
         <div className=" text-end justify-end w-1/6 items-end flex flex-row">
           <div className=" flex flex-row gap-2 pr-4">
-            <div className="bg-red-500  rounded-md w-[36px] h-8 justify-center items-center flex text-white text-md">
+            <div className="bg-red-500  rounded-md w-[36px] h-8 justify-center items-center flex text-white-100 text-md">
               <button onClick={showModal}>
                 <RiNotification3Line />
               </button>
               {modalIsShowing && <NotifyModal onClose={hideModal} />}
             </div>
-            <div className="bg-red-500 w-[36px] h-8 justify-center items-center flex rounded-md text-white text-md">
+            <div className="bg-red-500 w-[36px] h-8 justify-center items-center flex rounded-md text-white-100 text-md">
               <button onClick={showCalender}>
                 <RxCalendar />
                 {openedCalender && <CalenderModal onClose={hideCalender} />}

@@ -3,8 +3,10 @@ import { FC } from "react";
 import { MdLightbulb } from "react-icons/md";
 import { MdEditSquare } from "react-icons/md";
 import { MdDelete } from "react-icons/md";
+import { TodoLayout } from "../../layouts/TodoLayout";
+//import Birthdaypic from ""
 
-export const TodoBirthdayPlan: FC = () => {
+export const TodoBirthdayPlanFile: FC = () => {
   return (
     <div className="w-[100%] h-[100%] pt-3 ">
       <div className="h-[95%]">
@@ -62,12 +64,16 @@ export const TodoBirthdayPlan: FC = () => {
         </div>
       </div>
       <div className="h-[5%] w-[100%] text-left items-left justify-left">
-        <div className="flex flex-row gap-2 text-white">
-          <MdDelete className="bg-red-500 flex h-5 text-white" />
-          <MdEditSquare className="bg-red-500 flex  h-5 text-white" />
-          <MdLightbulb className="bg-red-500 flex  h-5 text-white" />
+        <div className="flex flex-row gap-2 text-white-100">
+          <MdDelete className="bg-red-500 flex h-5 text-white-100" />
+          <MdEditSquare className="bg-red-500 flex  h-5 text-white-100" />
+          <MdLightbulb className="bg-red-500 flex  h-5 text-white-100" />
         </div>
       </div>
     </div>
   );
+};
+
+export const TodoBirthdayPlan = () => {
+  return <TodoLayout component={<TodoBirthdayPlanFile />} />;
 };

@@ -1,5 +1,6 @@
 import { FC } from "react";
 import MyOwnPhoto from "../assets/images/MyProfile.jpg";
+import { DashboardLayout } from "../layouts/DashboardLayout";
 
 export const EditAccountInfoPage: FC = () => {
   return (
@@ -35,7 +36,7 @@ export const EditAccountInfoPage: FC = () => {
                 </label>
                 <input
                   type="text"
-                  className="focus:border-gray-300 h-8 rounded-md border-shadow border-2 border-gray-300"
+                  className="focus:border-gray-300 focus:outline-none h-8 rounded-md border-shadow border-2 border-gray-300"
                 />
               </div>
               <div className="flex flex-col">
@@ -44,7 +45,7 @@ export const EditAccountInfoPage: FC = () => {
                 </label>
                 <input
                   type="text"
-                  className="focus:border-gray-300 h-8 rounded-md border-shadow border-2 border-gray-300"
+                  className="focus:border-gray-300 h-8 focus:outline-none rounded-md border-shadow border-2 border-gray-300"
                 />
               </div>
               <div className=" flex flex-col ">
@@ -53,7 +54,7 @@ export const EditAccountInfoPage: FC = () => {
                 </label>
                 <input
                   type="email"
-                  className="focus:border-gray-300 h-8 rounded-md border-shadow border-2 border-gray-300"
+                  className="focus:border-gray-300 h-8 focus:outline-none rounded-md border-shadow border-2 border-gray-300"
                 />
               </div>
               <div className=" flex flex-col ">
@@ -62,7 +63,7 @@ export const EditAccountInfoPage: FC = () => {
                 </label>
                 <input
                   type="number"
-                  className="focus:border-gray-300 h-8 rounded-md border-shadow border-2 border-gray-300"
+                  className="focus:border-gray-300 h-8 focus:outline-none rounded-md border-shadow border-2 border-gray-300"
                 />
               </div>
               <div className=" flex flex-col ">
@@ -71,15 +72,15 @@ export const EditAccountInfoPage: FC = () => {
                 </label>
                 <input
                   type="text"
-                  className="focus:border-gray-300 h-8 rounded-md border-shadow border-2 border-gray-300"
+                  className="focus:border-gray-300 h-8 focus:outline-none rounded-md border-shadow border-2 border-gray-300"
                 />
               </div>
             </div>
-            <div className="flex pl-4 gap-3 flex-row text-[10px] text-white mt-5">
+            <div className="flex pl-4 gap-3 flex-row text-[10px] text-white-100 mt-5">
               <button className="bg-red-500 w-40 h-6 rounded-md">
                 Save Changes
               </button>
-              <button className="bg-red-500 w-28 h-6 text-white rounded-md">
+              <button className="bg-red-500 w-28 h-6 text-white-100 rounded-md">
                 Cancel
               </button>
             </div>
@@ -88,4 +89,8 @@ export const EditAccountInfoPage: FC = () => {
       </div>
     </div>
   );
+};
+
+export const EditAccountInfoFile = () => {
+  return <DashboardLayout component={<EditAccountInfoPage />} />;
 };

@@ -15,7 +15,7 @@ export const ModalInvite: FC<ModalProps> = ({ onClose }) => {
       onClick={onClose}
     >
       <div
-        className="mt-[16%] ml-[18%] border-shadow w-[602px] h-1/2 bg-white p-4 rounded-md"
+        className="mt-[16%] ml-[18%] border-shadow w-[602px] h-1/2 bg-white-100 p-4 rounded-md"
         onClick={(e) => e.stopPropagation()} // Prevents closing modal when clicking inside modal content
       >
         {/* <div className="border-shadow w-1/2 h-screen justify-center items-center mx-auto">*/}
@@ -38,10 +38,10 @@ export const ModalInvite: FC<ModalProps> = ({ onClose }) => {
                     <input
                       type="email"
                       placeholder="amanuelbeynecelina662@gmail.com"
-                      className="text-[8px] flex-grow justify-center w-full rounded-md"
+                      className="text-[8px] focus:outline-none flex-grow justify-center w-full rounded-md"
                     />
                   </div>
-                  <div className="text-white w-[15%] h-6 rounded-sm text-center items-center justify-center bg-[#f54242] mr-3">
+                  <div className="text-white-100 w-[15%] h-6 rounded-sm text-center items-center justify-center bg-[#f54242] mr-3">
                     <button className="rounded-md text-center items-center justify-center">
                       Send Invite
                     </button>
@@ -97,10 +97,10 @@ export const ModalInvite: FC<ModalProps> = ({ onClose }) => {
                   <input
                     type="email"
                     placeholder="https://www.figma.com/design/riual0IwM4UJnQt3LoP0KN/Task-Manager-webDesign-(Community)?node-id="
-                    className="text-[6px] flex-grow w-full rounded-md "
+                    className="text-[6px] flex-grow w-full focus:outline-none rounded-md "
                   />
                 </div>
-                <div className="pb-2 justify-center items-center text-white w-[15%] rounded-sm text-center bg-[#f54242] mr-3">
+                <div className="pb-2 justify-center items-center text-white-100 w-[15%] rounded-sm text-center bg-[#f54242] mr-3">
                   <button className="rounded-md text-[8px]">Copy Link</button>
                 </div>
               </div>

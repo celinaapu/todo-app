@@ -8,9 +8,6 @@ import { AiOutlineUsergroupAdd } from "react-icons/ai";
 import { TbCalendarStats } from "react-icons/tb";
 import { BiTask } from "react-icons/bi";
 import { IoIosAdd } from "react-icons/io";
-import BirthdayPartyPlan from "../assets/images/birthdayparty.png";
-import DesignPlan from "../assets/images/DesignImage.jpg";
-import PresentationPlan from "../assets/images/PresentationImage.jpg";
 import ToWalkADog from "../assets/images/WalkingDogImage.jpg";
 import ToMeetImage from "../assets/images/MeetingImages.jpg";
 import FirstChart from "../assets/images/Group 17.png";
@@ -20,7 +17,11 @@ import { AiOutlineFileDone } from "react-icons/ai";
 import { ModalInvite } from "../OtherComponents/ModalInvite.";
 import { useState } from "react";
 import { NewTaskModal } from "../OtherComponents/NewTaskModal";
-import { MainDashbutton, Priority, Status } from "../Component/Maindashbutton";
+import { MainDashbutton } from "../Component/Maindashbutton";
+import { DashboardLayout } from "../layouts/DashboardLayout";
+import { useSelector } from "react-redux";
+import { RootState } from "../lib/store/store";
+import { Priority, Status } from "../lib/tasks/state/tasks";
 
 export const MainDashboardPage: FC = () => {
   const [toOpenMoal, setModaltoOpen] = useState<boolean>(false);
@@ -31,8 +32,10 @@ export const MainDashboardPage: FC = () => {
   const openTaskModal = () => setTaskModaltoOpen(true);
   const closeTaskModal = () => setTaskModaltoOpen(false);
 
+  const allTasks = useSelector((state: RootState) => state.tasks.tasks);
+
   return (
-    <div className="w-[100%] h-screen">
+    <div className="w-[100%] h-[100%]">
       <header className=" flex flex-row">
         <div className=" flex flex-row flex-grow">
           <div className="flex flex-row font-md text-2xl w-[70%] h-12 ">
@@ -60,8 +63,8 @@ export const MainDashboardPage: FC = () => {
         </div>
       </header>
       <div>
-        <div className="w-[100%] h-screen border-4 gap-10 mt-10 flex flex-row">
-          <div className="w-1/2 ml-5 mt-5">
+        <div className="w-[100%] h-[80%] border-4 px-5 gap-3 mt-4 flex flex-row">
+          <div className="w-1/2 mt-5">
             <div className="border-shadow w-full flex flex-row flex-grow">
               <div className="flex flex-row items-center ">
                 <button>
@@ -82,35 +85,24 @@ export const MainDashboardPage: FC = () => {
               <p className="text-gray-400 pl-2">.Today</p>
             </div>
             <div>
-              <MainDashbutton
-                title="Attend Nischal's Birthday Party"
-                description="Buy gifts on the way and pick up cake from the bakery,(6 pm
-                    |Fresh Elements)......"
-                circleColor="#ff0000"
-                priority={Priority.moderate}
-                status={Status.notStarted}
-                imageLink={BirthdayPartyPlan}
-              />
-              <MainDashbutton
-                title="Landing Page Design For TravelingDays"
-                description=" get the work done by EOD and discuss with client before
-                    leaving.[4pm|Meeting]"
-                imageLink={DesignPlan}
-                priority={Priority.moderate}
-                status={Status.inProgress}
-                circleColor="#0000FF"
-              />
-
-              <MainDashbutton
-                title="Presentation on Final Product"
-                description="Make sure everything is functioning and the necessities are
-                  properly met. Prepare the team and get the document ready
-                  for..."
-                circleColor="#ff0000"
-                priority={Priority.moderate}
-                status={Status.inProgress}
-                imageLink={PresentationPlan}
-              />
+              {allTasks.map((task) => (
+                <MainDashbutton
+                  link={task.id}
+                  title={task.status}
+                  description={task.description}
+                  circleColor={
+                    task.priority === Priority.low
+                      ? "#ff00ee"
+                      : task.priority === Priority.moderate
+                      ? "#ffee11"
+                      : "#ff0000"
+                  }
+                  priority={task.priority}
+                  status={task.status}
+                  imageLink={task.image}
+                  dateCreated={task.date}
+                />
+              ))}
             </div>
           </div>
           <div className="w-1/2 mt-5 h-screen ml-5">
@@ -130,6 +122,7 @@ export const MainDashboardPage: FC = () => {
               </div>
 
               <MainDashbutton
+                link=""
                 title="Walking the Dog"
                 description="Take the dog to the park and bring threat as well."
                 imageLink={ToWalkADog}
@@ -138,6 +131,7 @@ export const MainDashboardPage: FC = () => {
                 isCompleted={true}
               />
               <MainDashbutton
+                link=""
                 title="Conduct Meeting"
                 description="Meet with the clien and finalize requirements."
                 imageLink={ToMeetImage}
@@ -151,4 +145,8 @@ export const MainDashboardPage: FC = () => {
       </div>
     </div>
   );
+};
+
+export const DisplayDashboardPage = () => {
+  return <DashboardLayout component={<MainDashboardPage />} />;
 };

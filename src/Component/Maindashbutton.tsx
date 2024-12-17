@@ -1,16 +1,8 @@
 /* eslint-disable react-refresh/only-export-components */
 import { BsThreeDots } from "react-icons/bs";
 import { FaRegCircle } from "react-icons/fa";
-
-export enum Status {
-  completed = "Completed",
-  notStarted = "Not Started",
-  inProgress = "In Progress",
-}
-
-export enum Priority {
-  moderate = "Moderate",
-}
+import { Link } from "react-router-dom";
+import { Priority, Status } from "../lib/tasks/state/tasks";
 
 type SidebarButtonProps = {
   title: string;
@@ -19,8 +11,9 @@ type SidebarButtonProps = {
   description: string;
   priority?: Priority;
   status: Status;
-  dateCreated?: string;
+  dateCreated?: Date;
   isCompleted?: boolean;
+  link: string;
 };
 
 export const MainDashbutton: React.FC<SidebarButtonProps> = ({
@@ -31,9 +24,14 @@ export const MainDashbutton: React.FC<SidebarButtonProps> = ({
   priority,
   status,
   isCompleted,
+  link,
 }) => {
   return (
-    <div className="text-start border-4 h-32 flex flex-row rounded-lg">
+    <Link
+      to={link}
+      role="button"
+      className="text-start border-4 h-32 flex flex-row rounded-lg"
+    >
       <div className=" text-sm text-extrBold w-[10%] ml-2 pt-2">
         <FaRegCircle color={circleColor} />
       </div>
@@ -89,6 +87,6 @@ export const MainDashbutton: React.FC<SidebarButtonProps> = ({
       <div className="text-gray-300 ">
         <BsThreeDots />
       </div>
-    </div>
+    </Link>
   );
 };

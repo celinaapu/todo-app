@@ -24,24 +24,24 @@ export const ChangePassword: FC = () => {
         <div className=" flex-row border-shodow flex justify-center items-center w-4/6 rounded-md-transparent">
           <div className="w-10/12">
             <input
-              className=" bg-slate-100 w-full h-8 rounded-md"
+              className=" bg-slate-100 w-full h-8 focus:outline-none rounded-md"
               type="type"
               placeholder="search your task here..."
             />
           </div>
-          <div className="bg-red-500 h-8 flex justify-center items-center  rounded-md w-[36px] text-white text-md">
+          <div className="bg-red-500 h-8 flex justify-center items-center  rounded-md w-[36px] text-white-100 text-md">
             <IoSearchOutline />
           </div>
         </div>
         <div className=" text-end justify-end w-1/6 items-end flex flex-row">
           <div className=" flex flex-row gap-2 pr-4">
-            <div className="bg-red-500  rounded-md w-[36px] h-8 justify-center items-center flex text-white text-md">
+            <div className="bg-red-500  rounded-md w-[36px] h-8 justify-center items-center flex text-white-100 text-md">
               <button onClick={showModal}>
                 <RiNotification3Line />
               </button>
               {modalIsShowing && <NotifyModal onClose={hideModal} />}
             </div>
-            <div className="bg-red-500 w-[36px] h-8 justify-center items-center flex rounded-md text-white text-md">
+            <div className="bg-red-500 w-[36px] h-8 justify-center items-center flex rounded-md text-white-100 text-md">
               <RxCalendar />
             </div>
           </div>
@@ -85,7 +85,7 @@ export const ChangePassword: FC = () => {
                 </label>
                 <input
                   type="Password"
-                  className="focus:border-gray-300 h-8 rounded-md border-shadow border-2 border-gray-300"
+                  className="focus:border-gray-300 h-8 focus:outline-none rounded-md border-shadow border-2 border-gray-300"
                 />
               </div>
               <div className="flex flex-col">
@@ -94,7 +94,7 @@ export const ChangePassword: FC = () => {
                 </label>
                 <input
                   type="password"
-                  className="focus:border-gray-300 h-8 rounded-md border-shadow border-2 border-gray-300"
+                  className="focus:border-gray-300 h-8 focus:outline-none rounded-md border-shadow border-2 border-gray-300"
                 />
               </div>
               <div className=" flex flex-col ">
@@ -103,15 +103,15 @@ export const ChangePassword: FC = () => {
                 </label>
                 <input
                   type="password"
-                  className="focus:border-gray-300 h-8 rounded-md border-shadow border-2 border-gray-300"
+                  className="focus:border-gray-300 h-8 focus:outline-none rounded-md border-shadow border-2 border-gray-300"
                 />
               </div>
             </div>
-            <div className="flex pl-4 gap-3 flex-row text-[10px] text-white mt-5">
+            <div className="flex pl-4 gap-3 flex-row text-[10px] text-white-100 mt-5">
               <button className="bg-red-500 w-40 h-6 rounded-md">
                 Update Password
               </button>
-              <button className="bg-red-500 w-28 h-6 text-white rounded-md">
+              <button className="bg-red-500 w-28 h-6 text-white-100 rounded-md">
                 Cancel
               </button>
             </div>

@@ -3,13 +3,15 @@ import { IoSearchOutline } from "react-icons/io5";
 import { RiNotification3Line } from "react-icons/ri";
 import { RxCalendar } from "react-icons/rx";
 import { SidebarDashboard } from "./DashSidebar";
+import { Link } from "react-router-dom";
 //import { MainDashboardPage } from "./MainDashboard";
+//import { DashboardLayout } from "../layouts/DashboardLayout";
 
 import MyOwnPhoto from "../assets/images/MyProfile.jpg";
 import { useState } from "react";
 import { NotifyModal } from "../OtherComponents/NotificationModal";
 
-export const AccountInfoPage: FC = () => {
+export const AccountInfoPageFile: FC = () => {
   const [modalIsShowing, setModaltoShow] = useState<boolean>(false);
   const showModal = () => setModaltoShow(true);
   const hideModal = () => setModaltoShow(false);
@@ -24,24 +26,24 @@ export const AccountInfoPage: FC = () => {
         <div className=" flex-row border-shodow flex justify-center items-center w-4/6 rounded-md-transparent">
           <div className="w-10/12">
             <input
-              className=" bg-slate-100 w-full h-8 rounded-md"
+              className=" bg-slate-100 w-full focus:outline-none h-8 rounded-md"
               type="type"
               placeholder="search your task here..."
             />
           </div>
-          <div className="bg-red-500 h-8 flex justify-center items-center  rounded-md w-[36px] text-white text-md">
+          <div className="bg-red-500 h-8 flex justify-center items-center  rounded-md w-[36px] text-white-100 text-md">
             <IoSearchOutline />
           </div>
         </div>
         <div className=" text-end justify-end w-1/6 items-end flex flex-row">
           <div className=" flex flex-row gap-2 pr-4">
-            <div className="bg-red-500  rounded-md w-[36px] h-8 justify-center items-center flex text-white text-md">
+            <div className="bg-red-500  rounded-md w-[36px] h-8 justify-center items-center flex text-white-100 text-md">
               <button onClick={showModal}>
                 <RiNotification3Line />
               </button>
               {modalIsShowing && <NotifyModal onClose={hideModal} />}
             </div>
-            <div className="bg-red-500 w-[36px] h-8 justify-center items-center flex rounded-md text-white text-md">
+            <div className="bg-red-500 w-[36px] h-8 justify-center items-center flex rounded-md text-white-100 text-md">
               <RxCalendar />
             </div>
           </div>
@@ -85,7 +87,7 @@ export const AccountInfoPage: FC = () => {
                 </label>
                 <input
                   type="text"
-                  className="focus:border-gray-300 h-8 rounded-md border-shadow border-2 border-gray-300"
+                  className="focus:border-gray-300 focus:outline-none h-8 rounded-md border-shadow border-2 border-gray-300"
                 />
               </div>
               <div className="flex flex-col">
@@ -94,7 +96,7 @@ export const AccountInfoPage: FC = () => {
                 </label>
                 <input
                   type="text"
-                  className="focus:border-gray-300 h-8 rounded-md border-shadow border-2 border-gray-300"
+                  className="focus:border-gray-300 focus:outline-none h-8 rounded-md border-shadow border-2 border-gray-300"
                 />
               </div>
               <div className=" flex flex-col ">
@@ -103,7 +105,7 @@ export const AccountInfoPage: FC = () => {
                 </label>
                 <input
                   type="email"
-                  className="focus:border-gray-300 h-8 rounded-md border-shadow border-2 border-gray-300"
+                  className="focus:border-gray-300 focus:outline-none h-8 rounded-md border-shadow border-2 border-gray-300"
                 />
               </div>
               <div className=" flex flex-col ">
@@ -112,7 +114,7 @@ export const AccountInfoPage: FC = () => {
                 </label>
                 <input
                   type="number"
-                  className="focus:border-gray-300 h-8 rounded-md border-shadow border-2 border-gray-300"
+                  className="focus:border-gray-300 focus:outline-none h-8 rounded-md border-shadow border-2 border-gray-300"
                 />
               </div>
               <div className=" flex flex-col ">
@@ -121,17 +123,21 @@ export const AccountInfoPage: FC = () => {
                 </label>
                 <input
                   type="text"
-                  className="focus:border-gray-300 h-8 rounded-md border-shadow border-2 border-gray-300"
+                  className="focus:border-gray-300 h-8 focus:outline-none rounded-md border-shadow border-2 border-gray-300"
                 />
               </div>
             </div>
-            <div className="flex pl-4 gap-3 flex-row text-[10px] text-white mt-5">
-              <button className="bg-red-500 w-40 h-6 rounded-md">
-                Update Password
-              </button>
-              <button className="bg-red-500 w-28 h-6 text-white rounded-md">
-                Cancel
-              </button>
+            <div className="flex pl-4 gap-3 flex-row text-[10px] text-white-100 mt-5">
+              <Link to="/edit-account-info">
+                <button className="bg-red-500 w-40 h-6 rounded-md">
+                  Update Info
+                </button>
+              </Link>
+              <Link to="/change-password">
+                <button className="bg-red-500 w-28 h-6 text-white-100 rounded-md">
+                  Change Password
+                </button>
+              </Link>
             </div>
           </div>
         </div>
@@ -139,3 +145,7 @@ export const AccountInfoPage: FC = () => {
     </div>
   );
 };
+
+//  export const AccountInfoPageFile = () => {
+//    return <DashboardLayout component={<AccountInfoPage />} />;
+// };

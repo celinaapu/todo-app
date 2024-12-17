@@ -6,7 +6,7 @@ import { GrGallery } from "react-icons/gr";
 export const EditTaskModal: FC = () => {
   return (
     <div className="overlay fixed inset-0 border-shadow bg-black bg-opacity-50 flex ">
-      <div className="ml-[18%] text-start bg-white w-1/2 h-screen p-4 rounded-md">
+      <div className="ml-[18%] text-start bg-white-100 w-1/2 h-screen p-4 rounded-md">
         <div className="border-shadow rounded-t-md mb-1 px-6 pt-2">
           <div className="text-black flex flex-row">
             <div className="font-bold text-start text-[14px] w-[95%]">
@@ -89,7 +89,7 @@ export const EditTaskModal: FC = () => {
             </div>
           </div>
           <div className=" mt-5">
-            <button className="bg-red-400 h-6 rounded-md text-[12px] text-white w-16">
+            <button className="bg-red-400 h-6 rounded-md text-[12px] text-white-100 w-16">
               Done
             </button>
           </div>
