@@ -1,8 +1,10 @@
 import { FC, useState } from "react";
 import { SlCalender } from "react-icons/sl";
 import { GoDotFill } from "react-icons/go";
-import { useDispatch } from "react-redux";
-import { Priority } from "../lib/tasks/state/tasks";
+import { useDispatch, useSelector } from "react-redux";
+import { addTask, Priority } from "../lib/tasks/state/tasks";
+import { RootState } from "../lib/store/store";
+import React from "react";
 
 type TaskProps = {
   onClose: () => void;
@@ -25,12 +27,17 @@ const initialFormValue = {
 };
 
 export const NewTaskModal: FC<TaskProps> = ({ onClose }) => {
+  const notification = useSelector(
+    (state: RootState) => state.notification.notifications
+  );
+  console.log(notification);
+
   const [formValues, setFormValues] = useState<FormValueType>(initialFormValue);
   const dispatch = useDispatch();
   const handleSubmit: React.FormEventHandler<HTMLFormElement> = (e) => {
     e.preventDefault();
-
-    console.log(formValues);
+    dispatch(addTask(formValues));
+    onClose();
   };
   return (
     <div
@@ -78,6 +85,21 @@ export const NewTaskModal: FC<TaskProps> = ({ onClose }) => {
                     setFormValues({ ...formValues, date: e.target.value });
                   }}
                   value={formValues.date}
+                  className="rounded-md focus:outline-none mb-4 z-10 w-[100%] flex-grow border-2"
+                />
+                <SlCalender className=" absolute" />
+              </div>
+              <label className="text-[14px] font-semibold mb-2">
+                Image Link
+              </label>
+              <div className="flex flex-row w-[100%] relative">
+                <input
+                  type="text"
+                  name="image"
+                  onChange={(e) => {
+                    setFormValues({ ...formValues, image: e.target.value });
+                  }}
+                  value={formValues.image}
                   className="rounded-md focus:outline-none mb-4 z-10 w-[100%] flex-grow border-2"
                 />
                 <SlCalender className=" absolute" />

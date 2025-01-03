@@ -6,10 +6,11 @@ import AddDocumentpic from "../assets/images/DocumentPic.jpg";
 import { MdDelete } from "react-icons/md";
 import { RiEditBoxFill } from "react-icons/ri";
 import { DashboardLayout } from "../layouts/DashboardLayout";
+import React from "react";
 
 const MyTask: FC = () => {
   return (
-    <div className="w-[100%] h-[100%]  bg-gray-200 flex flex-row gap-5 pt-4">
+    <div className="w-[100%] h-[100%] mt-4  bg-gray-200 flex flex-row gap-5 pt-4">
       <div className="w-1/2 mt-5 h-[100%] border-gray-400 rounded-lg py-2 px-3 border">
         <div className="flex text-[12px] font-bold gap-1">
           <h2 className="underline decoration-red-500">My </h2>
@@ -118,7 +119,6 @@ const MyTask: FC = () => {
               To submit required documents for something important.
             </p>
           </div>
-
           <p>
             <span className="font-semibold">Task Descrition:</span>
             Review the list of documents required for submission and ensure all

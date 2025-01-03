@@ -1,8 +1,10 @@
 /* eslint-disable react-refresh/only-export-components */
 import { BsThreeDots } from "react-icons/bs";
 import { FaRegCircle } from "react-icons/fa";
-import { Link } from "react-router-dom";
-import { Priority, Status } from "../lib/tasks/state/tasks";
+//import { Link } from "react-router-dom";
+import { deleteTask, Priority, Status } from "../lib/tasks/state/tasks";
+import { useDispatch } from "react-redux";
+import React from "react";
 
 type SidebarButtonProps = {
   title: string;
@@ -14,6 +16,7 @@ type SidebarButtonProps = {
   dateCreated?: Date;
   isCompleted?: boolean;
   link: string;
+  id: string;
 };
 
 export const MainDashbutton: React.FC<SidebarButtonProps> = ({
@@ -24,11 +27,16 @@ export const MainDashbutton: React.FC<SidebarButtonProps> = ({
   priority,
   status,
   isCompleted,
-  link,
+  dateCreated,
+  id,
 }) => {
+  const dispatch = useDispatch();
+  const handleDelete = (id: string) => {
+    dispatch(deleteTask(id));
+  };
+
   return (
-    <Link
-      to={link}
+    <div
       role="button"
       className="text-start border-4 h-32 flex flex-row rounded-lg"
     >
@@ -81,12 +89,19 @@ export const MainDashbutton: React.FC<SidebarButtonProps> = ({
           <img src={imageLink} className="rounded-lg w-20 h-14" />
         </div>
         <div className="text-gray-400 text-[10px] mt-4 flex-row flex">
-          <p className="flex flex-row">Created on 20/06/2024</p>
+          <p className="flex flex-row">Created on {dateCreated?.toString()}</p>
         </div>
       </div>
-      <div className="text-gray-300 ">
+      <div
+        role="button"
+        className="text-gray-300 w-8 h-8"
+        onClick={() => {
+          console.log("the id is ==> ", id);
+          handleDelete(id);
+        }}
+      >
         <BsThreeDots />
       </div>
-    </Link>
+    </div>
   );
 };

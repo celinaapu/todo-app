@@ -7,6 +7,7 @@ import { SidebarDashboard } from "../Component/DashSidebar";
 import { useState } from "react";
 import { CalenderModal } from "../OtherComponents/CalenderModal";
 import { NotifyModal } from "../OtherComponents/NotificationModal";
+import React from "react";
 //import { NewTaskModal } from "../OtherComponents/NewTaskModal";
 
 type TodoLayoutProps = {
@@ -66,7 +67,7 @@ export const TodoLayout: FC<TodoLayoutProps> = ({ component }) => {
         <div className=" border-shadow">
           <SidebarDashboard />
         </div>
-        <div className="pl-10 w-screen h-screen border-2 mt-5 rounded-lg">
+        <div className="pl-10 h-screen border-2 mt-5 rounded-lg">
           {component}
         </div>
       </div>

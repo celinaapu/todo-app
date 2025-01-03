@@ -9,6 +9,7 @@ import { MdLogout } from "react-icons/md";
 import { BsExclamationLg } from "react-icons/bs";
 import { SidebarButton } from "./SidebarButton";
 import { Link, useNavigation } from "react-router-dom";
+import React from "react";
 
 export const SidebarDashboard: FC = () => {
   const navigation = useNavigation();
@@ -16,7 +17,7 @@ export const SidebarDashboard: FC = () => {
 
   console.log("page url", pageUrl);
   return (
-    <div className="w-64 h-screen">
+    <div className="h-full">
       <Link to="/account_info">
         <div role="button" className="w-full flex justify-center">
           <div className="w-12 h-12 rounded-full border border-white z-10  ">
@@ -25,7 +26,7 @@ export const SidebarDashboard: FC = () => {
         </div>
       </Link>
 
-      <div className="flex-col text-white-100 bg-black h-screen rounded-lg -mt-6">
+      <div className="flex-col text-white-100 bg-black h-full rounded-lg -mt-6">
         <div className="pt-6">
           <p className="pr-12">amanuel</p>
           <i className="pr-10 text-sm">amanuel@gmail.com</i>
@@ -53,11 +54,19 @@ export const SidebarDashboard: FC = () => {
             isActive={pageUrl === "/task-categories"}
             icon={FaTasks}
           />
-          <SidebarButton title="Settings" link="" icon={IoSettingsOutline} />
-          <SidebarButton title="Help" link="" icon={IoIosHelpCircleOutline} />
+          <SidebarButton
+            title="Settings"
+            link="/chart"
+            icon={IoSettingsOutline}
+          />
+          <SidebarButton
+            title="Help"
+            link="/sign-up"
+            icon={IoIosHelpCircleOutline}
+          />
           <div
             role="button"
-            className="text-white-100 h-10 items-center mt-36 mx-5 flex flex-row hover:bg-white-100 hover:rounded-lg hover:text-red-500"
+            className="text-white-100 h-10 items-center mt-32 mx-5 flex flex-row hover:bg-white-100 hover:rounded-lg hover:text-red-500"
           >
             <div className="ml-1">
               <MdLogout />

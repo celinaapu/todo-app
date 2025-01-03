@@ -5,10 +5,11 @@ import LoginPhoto from "../assets/images/login.png";
 import FacebookLogo from "../assets/images/facebook.png";
 import GoogleLogo from "../assets/images/google.png";
 import CrossLogo from "../assets/images/xlogo.png";
+import React from "react";
 
 export const RegisterForm: FC = () => {
   return (
-    <div className="bg-register h-screen flex-row flex border-solid text-center">
+    <div className="bg-register h-full flex-row flex border-solid text-center">
       <div className="w-1/2 flex flex-col text-center pt-20">
         <h2 className="text-left pl-6 mb-3">Sign In</h2>
         <form className="px-6">
@@ -42,7 +43,6 @@ export const RegisterForm: FC = () => {
             </div>
             <div className="text-left mb-4 pt-5 pb-6">
               <button className=" text-white-100 text-sm h-10 w-20 bg-pink-400">
-                {" "}
                 Login
               </button>
             </div>

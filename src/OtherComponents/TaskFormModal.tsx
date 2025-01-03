@@ -1,4 +1,5 @@
 import { FC } from "react";
+import React from "react";
 import { FormButton } from "../Component/FormButton";
 
 /*type ModalProps = {

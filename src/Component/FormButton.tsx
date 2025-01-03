@@ -1,5 +1,7 @@
 //import { FC } from "react";
 
+import React from "react";
+
 type FormButtonProps = {
   title: string;
   span: string;

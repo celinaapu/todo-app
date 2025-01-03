@@ -2,6 +2,7 @@ import { CategoryTableButton } from "../Component/CategoryTableButton";
 import { FC } from "react";
 import { DashboardLayout } from "../layouts/DashboardLayout";
 import { Link } from "react-router-dom";
+import React from "react";
 
 const CategoryTable: FC = () => {
   const TaskStatusArray = [
@@ -33,8 +34,8 @@ const CategoryTable: FC = () => {
   const TaskPriorityHeadersArray = ["SN", "Task Priority", "Action"];
 
   return (
-    <div>
-      <div className="w-[100%] mt-3 mb-3 flex flex-row">
+    <div className="h-full">
+      <div className="w-[100%]  flex flex-row">
         <div className="w-[90%] ">
           <h1 className="font-bold text-[20px] ">
             <span className="underline decoration-red-700">Task </span>Category

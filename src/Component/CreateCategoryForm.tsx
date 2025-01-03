@@ -1,5 +1,6 @@
 import { FC } from "react";
 import { DashboardLayout } from "../layouts/DashboardLayout";
+import React from "react";
 
 export const CreateCategoryForm: FC = () => {
   return (

@@ -1,6 +1,6 @@
 //import { FC } from "react";
 import { MdAdd, MdDelete, MdEdit } from "react-icons/md";
-// import { useState } from "react";
+import React from "react";
 
 type CategoryTableProps = {
   title: string;
@@ -23,7 +23,7 @@ export const CategoryTableButton: React.FC<CategoryTableProps> = ({
   //   setPriorityModal = false;
 
   return (
-    <div className="mb-10">
+    <div className="">
       <div className=" flex flex-row w-[100%]">
         <div className="w-[90%] font-bold text-[14px]">
           <h2 className="underline">{title}</h2>

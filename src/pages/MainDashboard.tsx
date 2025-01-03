@@ -1,4 +1,3 @@
-import { FC } from "react";
 import OneOwnPhoto from "../assets/images/avatars.jpg";
 import TwoOwnPhoto from "../assets/images/Pdownload.jpg";
 import ThirdOwnPhoto from "../assets/images/Pimages.jpg";
@@ -15,13 +14,14 @@ import SecondChart from "../assets/images/Group 16.png";
 import ThirdChart from "../assets/images/Group 15.png";
 import { AiOutlineFileDone } from "react-icons/ai";
 import { ModalInvite } from "../OtherComponents/ModalInvite.";
-import { useState } from "react";
+import { FC, useState } from "react";
 import { NewTaskModal } from "../OtherComponents/NewTaskModal";
 import { MainDashbutton } from "../Component/Maindashbutton";
 import { DashboardLayout } from "../layouts/DashboardLayout";
 import { useSelector } from "react-redux";
 import { RootState } from "../lib/store/store";
 import { Priority, Status } from "../lib/tasks/state/tasks";
+import React from "react";
 
 export const MainDashboardPage: FC = () => {
   const [toOpenMoal, setModaltoOpen] = useState<boolean>(false);
@@ -34,8 +34,10 @@ export const MainDashboardPage: FC = () => {
 
   const allTasks = useSelector((state: RootState) => state.tasks.tasks);
 
+  console.log(allTasks);
+
   return (
-    <div className="w-[100%] h-[100%]">
+    <div className="w-[100%] h-full">
       <header className=" flex flex-row">
         <div className=" flex flex-row flex-grow">
           <div className="flex flex-row font-md text-2xl w-[70%] h-12 ">
@@ -63,7 +65,7 @@ export const MainDashboardPage: FC = () => {
         </div>
       </header>
       <div>
-        <div className="w-[100%] h-[80%] border-4 px-5 gap-3 mt-4 flex flex-row">
+        <div className="w-[100%] h-full border-4 px-5 gap-3 mt-4 flex flex-row">
           <div className="w-1/2 mt-5">
             <div className="border-shadow w-full flex flex-row flex-grow">
               <div className="flex flex-row items-center ">
@@ -88,8 +90,10 @@ export const MainDashboardPage: FC = () => {
               {allTasks.map((task) => (
                 <MainDashbutton
                   link={task.id}
-                  title={task.status}
+                  title={task.title}
+                  id={task.id}
                   description={task.description}
+                  key={task.id}
                   circleColor={
                     task.priority === Priority.low
                       ? "#ff00ee"
@@ -100,12 +104,12 @@ export const MainDashboardPage: FC = () => {
                   priority={task.priority}
                   status={task.status}
                   imageLink={task.image}
-                  dateCreated={task.date}
+                  dateCreated={task.date ? new Date(task.date) : new Date()}
                 />
               ))}
             </div>
           </div>
-          <div className="w-1/2 mt-5 h-screen ml-5">
+          <div className="w-1/2 mt-5 ml-5">
             <div className="text-center items-center flex flex-row ">
               <AiOutlineFileDone className="text-gray-400" />
               <p className="text-red-400 text-[10px]">Task Status</p>
@@ -129,6 +133,7 @@ export const MainDashboardPage: FC = () => {
                 status={Status.completed}
                 circleColor="#00FF00"
                 isCompleted={true}
+                id=""
               />
               <MainDashbutton
                 link=""
@@ -138,6 +143,7 @@ export const MainDashboardPage: FC = () => {
                 status={Status.completed}
                 circleColor="#00FF00"
                 isCompleted={true}
+                id=""
               />
             </div>
           </div>

@@ -6,11 +6,11 @@ import {
   createBrowserRouter,
   RouterProvider,
 } from "react-router-dom";
-
+import React from "react";
 //import { BrowserRouter as Router, Route, Routes, Link } from "react-router-dom";
 // import { MainDashboardPage } from "./pages/MainDashboard";
 //import { SignUpDiv } from "./Component/SignUpFile";
-import { TodoBirthdayPlan } from "./Component/TodoPages/TodoBirthdayPlan";
+//import { TodoBirthdayPlan } from "./Component/TodoPages/TodoBirthdayPlan";
 //import { RegisterForm } from "./Component/LoginFile";
 //import { DashboardLayout } from "./layouts/DashboardLayout";
 //import { MainDashboardPage } from "./pages/MainDashboard";
@@ -36,6 +36,8 @@ import { CategoryFile } from "./pages/CategoryTable";
 import { CategoryFormPage } from "./Component/CreateCategoryForm";
 import { AccountInfoPageFile } from "./Component/AccountInfoFile";
 import { EditAccountInfoFile } from "./Component/EditAccountInto";
+import DoughnutChartPage from "./OtherComponents/ChartPage";
+import { SignUpDiv } from "./pages/SignUpFile";
 
 const router = createBrowserRouter([
   {
@@ -71,8 +73,12 @@ const router = createBrowserRouter([
     Component: EditAccountInfoFile,
   },
   {
-    path: "/birthday-plan",
-    Component: TodoBirthdayPlan,
+    path: "/chart",
+    Component: DoughnutChartPage,
+  },
+  {
+    path: "/sign-up",
+    Component: SignUpDiv,
   },
 ]);
 

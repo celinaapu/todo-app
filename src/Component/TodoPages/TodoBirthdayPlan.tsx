@@ -1,10 +1,9 @@
 import { FC } from "react";
-//import Birthdayparty from "";
 import { MdLightbulb } from "react-icons/md";
 import { MdEditSquare } from "react-icons/md";
 import { MdDelete } from "react-icons/md";
 import { TodoLayout } from "../../layouts/TodoLayout";
-//import Birthdaypic from ""
+import React from "react";
 
 export const TodoBirthdayPlanFile: FC = () => {
   return (

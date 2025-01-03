@@ -4,6 +4,7 @@ import { RiNotification3Line } from "react-icons/ri";
 import { RxCalendar } from "react-icons/rx";
 import { SidebarDashboard } from "./DashSidebar";
 import { Link } from "react-router-dom";
+import React from "react";
 //import { MainDashboardPage } from "./MainDashboard";
 //import { DashboardLayout } from "../layouts/DashboardLayout";
 
@@ -17,8 +18,8 @@ export const AccountInfoPageFile: FC = () => {
   const hideModal = () => setModaltoShow(false);
 
   return (
-    <div className="h-screen bg-slate-100">
-      <div className="w-screen shadow-lg py-6 mb-6 flex bg-[#f8f8f8]">
+    <div className=" bg-slate-100">
+      <div className="w-full shadow-lg py-6 mb-6 flex bg-[#f8f8f8]">
         <div className="flex flex-row text-start text-xl pl-5 pt-2 font-extrabold w-1/6">
           <h2 className="text-red-400">Dash</h2>
           <h2>board</h2>
@@ -53,11 +54,11 @@ export const AccountInfoPageFile: FC = () => {
           </div>
         </div>
       </div>
-      <div className="flex flex-row gap-10">
-        <div className=" border-shadow">
+      <div className="flex  h-full flex-row gap-10">
+        <div className=" w-[20%] border-shadow">
           <SidebarDashboard />
         </div>
-        <div className="w-screen h-screen border-4 p-4  mt-6 rounded-md border-shadow">
+        <div className="w-[80%] border-4 p-4  mt-6 rounded-md border-shadow">
           <div className="font-bold flex flex-row w-[100%] mb-2">
             <div className="w-[85%] text-[12px]">
               <p>
@@ -79,7 +80,7 @@ export const AccountInfoPageFile: FC = () => {
               <p className="text-[8px]">amanuel@gmail.com</p>
             </div>
           </div>
-          <div className=" w-[90%] h-[80%] border-2 rounded-lg m-5 borer-shadow ">
+          <div className=" w-[90%] h-full border-2 rounded-lg m-5 borer-shadow ">
             <div className="w-[65%] pl-4 pt-5">
               <div className="flex flex-col">
                 <label className="text-[12px] pt-2 pb-1 font-semibold">

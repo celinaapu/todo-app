@@ -31,18 +31,7 @@ interface TasksState {
 }
 
 const taskInitialState: TasksState = {
-  tasks: [
-    {
-      title: "Walk the dogs",
-      description: "Walking the dog in the day time",
-      date: new Date(),
-      id: "1",
-      image:
-        "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.newsweek.com%2Fhow-long-walking-dog-based-breed-vets-1802937&psig=AOvVaw1uBHvxYEhhNnqabT9tMV5j&ust=1734198923466000&source=images&cd=vfe&opi=89978449&ved=0CBEQjRxqFwoTCNCz_8eopYoDFQAAAAAdAAAAABAE",
-      priority: Priority.low,
-      status: Status.inProgress,
-    },
-  ],
+  tasks: [],
   total: 0,
   inProgress: 0,
   notStarted: 0,
@@ -54,12 +43,21 @@ export const tasksSlice = createSlice({
   initialState: taskInitialState,
   reducers: {
     addTask: (state, action) => {
-      state.tasks = [...state.tasks, action.payload];
+      state.tasks = [
+        ...state.tasks,
+        { ...action.payload, id: state.tasks.length.toString() },
+      ];
     },
     deleteTask: (state, action) => {
-      state.tasks = state.tasks.filter(
-        (tasks) => tasks.id !== action.payload.id
-      );
+      const newTasks = state.tasks.filter((task) => {
+        if (task.id === action.payload) {
+          return false;
+        } else {
+          return true;
+        }
+      });
+      console.log("New Tasks ====>", newTasks);
+      state.tasks = newTasks;
     },
     getTotal: (state) => {
       state.total = state.tasks.length;
@@ -81,3 +79,12 @@ export const tasksSlice = createSlice({
     },
   },
 });
+
+export const {
+  addTask,
+  deleteTask,
+  getTotal,
+  getCompleted,
+  getInProgress,
+  getNotStatrted,
+} = tasksSlice.actions;
