@@ -12,6 +12,6 @@ export const getTotalTasks = createSelector(
 );
 
 export const allUsers = createSelector(
-  (state: RootState) => state.users,
+  (state: RootState) => state.user,
   (appUsers) => appUsers.total
 );
