@@ -8,6 +8,7 @@ type User = {
   email: string;
   password?: string;
   confirmPassword?: string;
+  isLoggedIn: boolean;
 };
 
 interface UserState {
@@ -31,5 +32,4 @@ export const usersSlice = createSlice({
   },
 });
 export const { login, logout } = usersSlice.actions;
-export const selec;
 export default usersSlice;

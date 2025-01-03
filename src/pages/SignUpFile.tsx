@@ -8,6 +8,8 @@ import SignupPhoto from "../assets/images/signupphoto.png";
 import { MdEmail } from "react-icons/md";
 import React from "react";
 import { Link } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { login } from "../lib/users/userSlice";
 
 export const SignUpDiv: FC = () => {
   const [firstName, setFirstName] = useState("");
@@ -17,8 +19,34 @@ export const SignUpDiv: FC = () => {
   const [password, setPassword] = useState("");
   const [confirmpassword, setConfirmPassword] = useState("");
 
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    const dispatch = useDispatch;
+    dispatch(
+      (login{
+        firstName: firstName,
+        lastName: lastName,
+        userName: userName,
+        email: email,
+        password: password,
+        confirmPassword: confirmpassword,
+        isLoggedIn: true,
+        id: "",
+      })
+    );
+  };
+
+// function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+//   throw new Error("Function not implemented.");
+// }
+
   return (
-    <form>
+    <form
+      onSubmit={(e) => {
+        handleSubmit(e);
+      }}
+    >
       <Link to="/sign-up">
         <div className="bg-register h-full flex flex-row text-center font-poppins justify-center border-solid">
           <div className="w-1/2 h-full">
