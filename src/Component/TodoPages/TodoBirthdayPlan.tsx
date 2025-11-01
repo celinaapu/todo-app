@@ -3,7 +3,6 @@ import { MdLightbulb } from "react-icons/md";
 import { MdEditSquare } from "react-icons/md";
 import { MdDelete } from "react-icons/md";
 import { TodoLayout } from "../../layouts/TodoLayout";
-import React from "react";
 
 export const TodoBirthdayPlanFile: FC = () => {
   return (

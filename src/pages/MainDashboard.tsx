@@ -21,7 +21,6 @@ import { DashboardLayout } from "../layouts/DashboardLayout";
 import { useSelector } from "react-redux";
 import { RootState } from "../lib/store/store";
 import { Priority, Status } from "../lib/tasks/state/tasks";
-import React from "react";
 
 export const MainDashboardPage: FC = () => {
   const [toOpenMoal, setModaltoOpen] = useState<boolean>(false);

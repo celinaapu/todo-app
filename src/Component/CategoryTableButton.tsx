@@ -1,4 +1,3 @@
-//import { FC } from "react";
 import { MdAdd, MdDelete, MdEdit } from "react-icons/md";
 import React from "react";
 
@@ -16,11 +15,6 @@ export const CategoryTableButton: React.FC<CategoryTableProps> = ({
   data,
   headers,
 }) => {
-  // const [toOpenPriorityModal, setPriorityModal] = useState(false);
-  // const openPriorityModal,
-  //   setPriorityModal = true;
-  // const closePriorityModal,
-  //   setPriorityModal = false;
 
   return (
     <div className="">

@@ -9,7 +9,6 @@ import { MdLogout } from "react-icons/md";
 import { BsExclamationLg } from "react-icons/bs";
 import { SidebarButton } from "./SidebarButton";
 import { Link, useNavigation } from "react-router-dom";
-import React from "react";
 
 export const SidebarDashboard: FC = () => {
   const navigation = useNavigation();

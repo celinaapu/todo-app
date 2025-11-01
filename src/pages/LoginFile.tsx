@@ -5,7 +5,6 @@ import LoginPhoto from "../assets/images/login.png";
 import FacebookLogo from "../assets/images/facebook.png";
 import GoogleLogo from "../assets/images/google.png";
 import CrossLogo from "../assets/images/xlogo.png";
-import React from "react";
 
 export const RegisterForm: FC = () => {
   return (

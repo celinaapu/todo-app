@@ -3,12 +3,10 @@ import { IoSearchOutline } from "react-icons/io5";
 import { RiNotification3Line } from "react-icons/ri";
 import { RxCalendar } from "react-icons/rx";
 import { SidebarDashboard } from "../Component/DashSidebar";
-//import { MainDashboardPage } from "../pages/MainDashboard";
 import { useState } from "react";
 import { CalenderModal } from "../OtherComponents/CalenderModal";
 import { NotifyModal } from "../OtherComponents/NotificationModal";
 import React from "react";
-//import { NewTaskModal } from "../OtherComponents/NewTaskModal";
 
 type DashboardLayoutProps = {
   component: React.ReactNode;
@@ -24,7 +22,7 @@ export const DashboardLayout: FC<DashboardLayoutProps> = ({ component }) => {
   const hideCalender = () => toSetCalenderToOpen(false);
 
   return (
-    <div className="bg-slate-100 h-full sm:justify-center sm:text-blue-500 md:text-red-600 lg:text-yellow-700">
+    <div className="bg-slate-100 h-full sm:justify-center sm:text-blue-500 md:grey-800 lg:text-yellow-700">
       <div className="w-full shadow-lg py-6 mb-6 flex bg-[#f8f8f8]">
         <div className="flex flex-row text-start text-xl pl-5 pt-2 font-extrabold w-1/6">
           <h2 className="text-red-400">Dash</h2>

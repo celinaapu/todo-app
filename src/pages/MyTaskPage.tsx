@@ -6,7 +6,6 @@ import AddDocumentpic from "../assets/images/DocumentPic.jpg";
 import { MdDelete } from "react-icons/md";
 import { RiEditBoxFill } from "react-icons/ri";
 import { DashboardLayout } from "../layouts/DashboardLayout";
-import React from "react";
 
 const MyTask: FC = () => {
   return (

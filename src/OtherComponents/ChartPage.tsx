@@ -9,7 +9,6 @@ import {
   CategoryScale,
   LinearScale,
 } from "chart.js";
-import React from "react";
 
 // Register the required Chart.js components
 ChartJS.register(
@@ -49,7 +48,7 @@ const DoughnutChartPage = () => {
   };
 
   const data3 = {
-    dataset: [
+    datasets: [
       {
         label: "third chat",
         data: [13, 87],

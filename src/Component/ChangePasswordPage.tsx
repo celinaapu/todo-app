@@ -3,7 +3,6 @@ import { IoSearchOutline } from "react-icons/io5";
 import { RiNotification3Line } from "react-icons/ri";
 import { RxCalendar } from "react-icons/rx";
 import { SidebarDashboard } from "./DashSidebar";
-//import { MainDashboardPage } from "./MainDashboard";
 
 import MyOwnPhoto from "../assets/images/MyProfile.jpg";
 import { useState } from "react";

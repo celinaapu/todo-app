@@ -3,12 +3,10 @@ import { IoSearchOutline } from "react-icons/io5";
 import { RiNotification3Line } from "react-icons/ri";
 import { RxCalendar } from "react-icons/rx";
 import { SidebarDashboard } from "../Component/DashSidebar";
-//import { MainDashboardPage } from "../pages/MainDashboard";
 import { useState } from "react";
 import { CalenderModal } from "../OtherComponents/CalenderModal";
 import { NotifyModal } from "../OtherComponents/NotificationModal";
 import React from "react";
-//import { NewTaskModal } from "../OtherComponents/NewTaskModal";
 
 type TodoLayoutProps = {
   component: React.ReactNode;

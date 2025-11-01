@@ -4,9 +4,6 @@ import { RiNotification3Line } from "react-icons/ri";
 import { RxCalendar } from "react-icons/rx";
 import { SidebarDashboard } from "./DashSidebar";
 import { Link } from "react-router-dom";
-import React from "react";
-//import { MainDashboardPage } from "./MainDashboard";
-//import { DashboardLayout } from "../layouts/DashboardLayout";
 
 import MyOwnPhoto from "../assets/images/MyProfile.jpg";
 import { useState } from "react";

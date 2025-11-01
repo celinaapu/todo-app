@@ -2,7 +2,6 @@ import { CategoryTableButton } from "../Component/CategoryTableButton";
 import { FC } from "react";
 import { DashboardLayout } from "../layouts/DashboardLayout";
 import { Link } from "react-router-dom";
-import React from "react";
 
 const CategoryTable: FC = () => {
   const TaskStatusArray = [

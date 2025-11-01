@@ -2,7 +2,6 @@ import { FC } from "react";
 import { IoArrowUndo } from "react-icons/io5";
 import { useState } from "react";
 import DatePicker from "react-datepicker";
-import React from "react";
 
 type CalenderProps = {
   onClose: () => void;

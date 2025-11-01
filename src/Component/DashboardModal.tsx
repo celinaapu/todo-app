@@ -4,7 +4,6 @@ import { RiNotification3Line } from "react-icons/ri";
 import { RxCalendar } from "react-icons/rx";
 import { SidebarDashboard } from "./DashSidebar";
 import { MainDashboardPage } from "../pages/MainDashboard";
-import React from "react";
 
 export const DashboardWithModal: FC = () => {
   return (
